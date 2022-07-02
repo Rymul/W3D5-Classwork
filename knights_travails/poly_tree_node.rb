@@ -8,9 +8,9 @@ class PolyTreeNode
         @children = children
     end
 
-    # def inspect
-    #     @value.inspect
-    # end
+    def inspect
+        @value.inspect
+    end
 
     def parent=(parent)
         # remove self from current parent

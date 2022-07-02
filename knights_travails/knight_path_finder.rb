@@ -45,12 +45,27 @@ class KnightPathFinder
             end
             queue += current_node.children
         end
-        p @root_node
+        @root_node
         # puts n
         # true
+    end
+
+    def find_path(end_pos)
+        ending = @root_node.dfs(end_pos)
+        path = trace_path_back(ending).reverse
+    end
+
+    def trace_path_back(end_pos)
+        path = [end_pos]
+        current_node = end_pos
+        while !current_node.parent.nil?
+            current_node = current_node.parent #.value
+            path << current_node
+        end
+        path
     end
 end
 
 kpf = KnightPathFinder.new([0, 1])
-# p KnightPathFinder.valid_moves([0, 1])
-p kpf.build_move_tree
+kpf.build_move_tree
+p kpf.find_path([7,4])
