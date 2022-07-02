@@ -69,3 +69,5 @@ end
 kpf = KnightPathFinder.new([0, 1])
 kpf.build_move_tree
 p kpf.find_path([7,4])
+
+#test commit
